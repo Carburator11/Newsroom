@@ -76,7 +76,7 @@ div[class^="cat"]:hover{
 .cat6{      grid-area: cat6; background-color: #3366ff; color: white;}
 .cat7{      grid-area: cat7; background-color: #668cff; color: white;}
 .cat8{      grid-area: cat8; background-color: #99b3ff; color: white;}
-.cat9{      grid-area: cat9; background-color: #ccd9ff; color: white;}
+.cat9{      grid-area: cat9; background-color: orange; color: black;}
 
 .side0{
   grid-area: side0;
@@ -136,16 +136,16 @@ height: 100%;
 #art3{        grid-area: art3  ; height: 100%}
 #art4{        grid-area: art4  ; height: 100%}
   .side2{       grid-area: side2 ; background: white; text-align: center; border-top : 7px solid #1955a5}
-  .side3{       grid-area: side3 ; background: seagreen;}
+  .side3{       grid-area: side3 ; background: #3366ff;}
 #art5{        grid-area: art5  ; height: 100%}
 #art6{        grid-area: art6  ; height: 100%}
 #art7{        grid-area: art7  ; height: 100%}
 #art8{        grid-area: art8  ; height: 100%}
 #art9{        grid-area: art9  ; height: 100%}
 #art10{       grid-area: art10 ; height: 100%}
-  #pic5{      grid-area: pic5  ; height: 100% ; border: 1px solid purple}
-  #pic6{      grid-area: pic6  ; height: 100% ; border: 1px solid purple}
-  #pic7{      grid-area: pic7  ; height: 100% ; border: 1px solid purple}
-  #pic8{      grid-area: pic8  ; height: 100% ; border: 1px solid purple}
-  #pic9{      grid-area: pic9  ; height: 100% ; border: 1px solid purple}
-  #pic10{     grid-area: pic10 ; height: 100% ; border: 1px solid purple}
+  #pic5{      grid-area: pic5  ; height: 100%}
+  #pic6{      grid-area: pic6  ; height: 100%}
+  #pic7{      grid-area: pic7  ; height: 100%}
+  #pic8{      grid-area: pic8  ; height: 100%}
+  #pic9{      grid-area: pic9  ; height: 100%}
+  #pic10{     grid-area: pic10 ; height: 100%}

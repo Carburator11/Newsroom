@@ -15,15 +15,15 @@
 <body>
 
 <div class= "titleBox">News room</div><div class = "menu"></div>
-  <div class= "cat1">Main</div>
-  <div class= "cat2">Top stories</div>
-  <div class= "cat3">International</div>
-  <div class= "cat4">Politics</div>
-  <div class= "cat5">Environment</div>
-  <div class= "cat6">Tech</div>
-  <div class= "cat7">Digital</div>
-  <div class= "cat8">Finance</div>
-  <div class= "cat9">Sport</div>
+  <div class= "cat1" onclick= changeXHR(0)>Top stories</div>
+  <div class= "cat2" onclick= changeXHR(1)>International</div>
+  <div class= "cat3" onclick= changeXHR(2)>Politics</div>
+  <div class= "cat4" onclick= changeXHR(3)>Environment</div>
+  <div class= "cat5" onclick= changeXHR(4)>Tech</div>
+  <div class= "cat6" onclick= changeXHR(5)>Digital</div>
+  <div class= "cat7" onclick= changeXHR(6)>Finance</div>
+  <div class= "cat8" onclick= changeXHR(7)>Sport</div>
+  <div class= "cat9" onclick= credit()    >About</div>
 
 <div class= "content"  id="art0">
 
@@ -50,11 +50,7 @@
 <div class="content" id="art4">
 </div>
 
-<div class= "side2">
-<a class="twitter-timeline" data-width="300" data-height="600" href="https://twitter.com/CNN">Tweets by CNN
-  </a>
-
-
+<div class= "side2" id="twitter-module">
 
 </div>
 
@@ -83,7 +79,7 @@
 </body>
 
 <script>
-
+var current = 0;
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "https://newsapi.org/v1/articles?source=cnn&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
@@ -110,16 +106,16 @@ console.log(xhr4.status);
 var NatGeo = JSON.parse(xhr4.responseText);
 
 var xhr5 = new XMLHttpRequest();
-xhr5.open("GET", "https://newsapi.org/v1/articles?source=mashable&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
+xhr5.open("GET", "https://newsapi.org/v1/articles?source=recode&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
 xhr5.send();
 console.log(xhr5.status);
-var Mash = JSON.parse(xhr5.responseText);
+var Recode = JSON.parse(xhr5.responseText);
 
 var xhr6 = new XMLHttpRequest();
-xhr6.open("GET", "https://newsapi.org/v1/articles?source=techcrunch&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
+xhr6.open("GET", "https://newsapi.org/v1/articles?source=hacker-news&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
 xhr6.send();
 console.log(xhr6.status);
-var TechCrunch = JSON.parse(xhr6.responseText);
+var HackerNews = JSON.parse(xhr6.responseText);
 
 var xhr7 = new XMLHttpRequest();
 xhr7.open("GET", "https://newsapi.org/v1/articles?source=financial-times&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
@@ -134,8 +130,17 @@ console.log(xhr8.status);
 var BBCsport = JSON.parse(xhr8.responseText);
 
 
-var resultsArray = [CNN, BBC, GuardUK, NatGeo, Mash, TechCrunch, FT, BBCsport];
-var current = 0;
+var resultsArray = [CNN, BBC, GuardUK, NatGeo, Recode, HackerNews, FT, BBCsport];
+var twitterUrlArray = [ "<a class='twitter-timeline' data-width='300' data-height='600' href='https://twitter.com/CNN'>Tweets by @CNN</a>",
+                        "<a class='twitter-timeline' data-width='300' data-height='600' href='https://twitter.com/BBCNews?ref_src=twsrc%5Etfw'>Tweets by BBCNews</a>",
+                        "<a class='twitter-timeline' data-width='300' data-height='600' href='https://twitter.com/guardian'>Tweets by @guardian</a>",
+                        "<a class='twitter-timeline' data-width='300' data-height='600' href='https://twitter.com/natgeo'>Tweets by @natgeo</a>",
+                        "<a class='twitter-timeline' data-width='300' data-height='600' href='https://twitter.com/recode'>Tweets by @recode</a>",
+                        "<a class='twitter-timeline' data-width='300' data-height='600' href='https://twitter.com/thehackersnews'>Tweets by @thehackersnews</a>",
+                        "<a class='twitter-timeline' data-width='300' data-height='600' href='https://twitter.com/ft'>Tweets by @FT</a>",
+                        "<a class='twitter-timeline' data-width='300' data-height='600' href='https://twitter.com/bbcsport'>Tweets by @bbcsport</a>",];
+
+
 var currentXHR = resultsArray[current];
 
 newsRoom(resultsArray[current]);
@@ -149,13 +154,15 @@ function newXHR(){
 
 };
 
-
+function changeXHR(e){
+  current = e;
+  newsRoom(resultsArray[current]);
+}
 
 
 function newsRoom(e){
       document.getElementById('result').innerHTML =   "Source: " + (e.source).toUpperCase()+ " <br>(" + e.articles.length +" articles)<br>"+
       current;
-
       for(i = 0 ; i <= 0 ; i++){
         let ii = "art";
         let title = (JSON.stringify(e.articles[i].title)).replace(/\"/g, "");
@@ -164,9 +171,9 @@ function newsRoom(e){
             if (author === "by null"){author = (e.source).toUpperCase() ; }
         let description = (JSON.stringify(e.articles[i].description)).replace(/\"/g, "");
 
-            document.getElementById(ii+i).innerHTML = "<h1><a href="+ e.articles[i].url +">"+title+"</a></h1>"
+            document.getElementById(ii+i).innerHTML = "<h1><a target= '_blank' href="+ e.articles[i].url +">"+title+"</a></h1>"
                                                       +"<h4>"+author+"</h4>"
-                                                      +"<a href=" + e.articles[i].url + "><img src=" + e.articles[i].urlToImage + "></a>"
+                                                      +"<a target= '_blank' href=" + e.articles[i].url + "><img src=" + e.articles[i].urlToImage + "></a>"
                                                       +"<p>" + description + "</p>";
                                                     }
 
@@ -174,14 +181,14 @@ function newsRoom(e){
       for(i = 1 ; i <= 4 ; i++){
       let ii = "art";
       let title = (JSON.stringify(e.articles[i].title)).replace(/\"/g, "");
-      if (title.length > 80){title = title.substring(0,77)+"..."}
+      if (title.length > 55){title = title.substring(0,52)+"..."}
       let author = "by "+(JSON.stringify(e.articles[i].author)).replace(/\"/g, "");
       if (author === "by null"){author = (e.source).toUpperCase() ; }
       let description = (JSON.stringify(e.articles[i].description)).replace(/\"/g, "");
 
-      document.getElementById(ii+i).innerHTML = "<h1><a href="+ e.articles[i].url +">"+title+"</a></h1>"
+      document.getElementById(ii+i).innerHTML = "<h1><a target= '_blank' href="+ e.articles[i].url +">"+title+"</a></h1>"
                                               +"<h4>"+author+"</h4>"
-                                              +"<a href="+ e.articles[i].url+"><img src="+ e.articles[i].urlToImage+ "></a>"
+                                              +"<a target= '_blank' href="+ e.articles[i].url+"><img src="+ e.articles[i].urlToImage+ "></a>"
                                               ;
       }
 
@@ -192,13 +199,17 @@ function newsRoom(e){
       if (title.length > 59){title = title.substring(0,57)+"..."}
       let description = (JSON.stringify(e.articles[i].description)).replace(/\"/g, "");
 
-      document.getElementById(ii+i).innerHTML = "<h3><a href="+ e.articles[i].url +">"+title+"</a></h3>";
-      document.getElementById(iii+i).innerHTML = "<a href="+ e.articles[i].url+"><img src="+ e.articles[i].urlToImage + "></a>";}
+      document.getElementById(ii+i).innerHTML = "<h3><a target= '_blank' href="+ e.articles[i].url +">"+title+"</a></h3>";
+      document.getElementById(iii+i).innerHTML = "<a target= '_blank' href="+ e.articles[i].url+"><img src="+ e.articles[i].urlToImage + "></a>";}
+
+      document.getElementById('twitter-module').innerHTML = twitterUrlArray[current];
+      twttr.widgets.load();
 }
 
 
-
-
+function credit(){
+  alert("Copyright \u00A9 P. Vautherin 2017.\nBuilt with HTML, CSS, plain Javascript, Twitter widget and NewsAPI.org.\nAll product names, logos, contents and brands are property of their respective owners. \n\n p.vautherin@hotmail.com \n github.com/Carburator11")
+}
 
 
 
