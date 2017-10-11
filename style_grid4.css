@@ -1,0 +1,143 @@
+a {text-decoration: none; color: inherit; }
+
+a:hover {color: #1955a5;}
+img:hover{opacity: 0.7;}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0; padding:0;
+  font-family:  'Droid Serif', georgia, serif;}
+
+h1{ font-size: 32px;   }
+h3{   font-size: 18px;}
+h4 {  margin: 2px 0px 5px 0px;
+      font-size: 14px;
+      font-weight: normal;}
+
+.content{   background: white;
+            text-align: center;}
+
+.ad{        background: palegreen;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;}
+
+div[class^="cat"]{
+            background: #f08080;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;}
+
+body{
+
+background: #f7f7f7;
+display: grid;
+grid-template-columns: 13.1% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 13.1%;
+grid-template-rows: 90px 30px auto 45px 300px 300px 45px 80px 80px 80px ;
+grid-gap: 5px;
+grid-template-areas:
+". title title title title title title title title title."
+". cat1 cat2 cat3 cat4 cat5 cat6 cat7 cat8 cat9 ."
+". art0 art0 art0 art0 art0 art0 art0 side0 side0 ."
+". banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 ."
+". art1 art1 art1 art2 art2 art2 side2 side2 side2 ."
+". art3 art3 art3 art4 art4 art4 side2 side2 side2 ."
+". banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 ."
+". pic5 art5 art5 pic6 art6 art6 side3 side3 side3 ."
+". pic7 art7 art7 pic8 art8 art8 side3 side3 side3 ."
+". pic9 art9 art9 pic10 art10 art10 side3 side3 side3 ."
+;
+align-items: stretch;  justify-content: center; justify-items: stretch;
+}
+
+.titleBox{  grid-area: title;  background: cyan;
+            font-family: 'Faster One';
+            font-size: 64px;
+            color: blue;
+            padding: 10px 0px 0px 60px;}
+.menu{       display: none;}
+
+.cat1{      grid-area: cat1;
+            color: white;}
+.cat2{      grid-area: cat2;}
+.cat3{      grid-area: cat3;}
+.cat4{      grid-area: cat4;}
+.cat5{      grid-area: cat5;}
+.cat6{      grid-area: cat6;}
+.cat7{      grid-area: cat7;}
+.cat8{      grid-area: cat8;}
+.cat9{      grid-area: cat9;}
+
+.side0{
+  grid-area: side0;
+  background: lightgreen;
+  display: grid;
+  grid-template-rows: 24% 24% 24% 24% ;
+  grid-template-areas: "side_highlight"  "side_content"  "ad1"  "ad2";
+  grid-row-gap: 5px;
+  align-items: stretch;
+  text-align: center;
+}
+
+#art0 { grid-area: art0;
+        min-height: 400px;
+        padding: 15px;
+}
+
+#art0 img {
+  min-height: 300px;
+  width: 85%;
+  padding-left: 10%;}
+
+#art1, #art2, #art3, #art4{
+  border-top : 7px solid #1955a5 ;
+}
+
+#art5, #art6, #art7, #art8, #art9, #art10{
+  border-top : 3px solid #1955a5
+}
+
+#art1 h1, #art2 h1, #art3 h1, #art4 h1{
+  font-size: 20px;}
+
+#art1 img, #art2 img, #art3 img, #art4  img{
+  height: 200px;
+  width: 100%;
+  }
+
+
+#pic5 img, #pic6 img, #pic7 img, #pic8 img, #pic9 img, #pic10 img{
+height: 100%;
+  width: 100%;
+  object-fit: contain;}
+
+.content{padding: 5px;}
+
+
+  .side_highL{  grid-area: side_highlight;}
+  .side_cont{   grid-area: side_content;}
+  .ad1{         grid-area: ad1;}
+  .ad2{         grid-area: ad2;}
+
+.banner-ad1{  grid-area: banner-ad1;}
+.banner-ad2{  grid-area: banner-ad2;}
+#art1{        grid-area: art1  ; height: 100%}
+#art2{        grid-area: art2  ; height: 100%}
+#art3{        grid-area: art3  ; height: 100%}
+#art4{        grid-area: art4  ; height: 100%}
+  .side2{       grid-area: side2 ; background: white; text-align: center; border-top : 7px solid #1955a5}
+  .side3{       grid-area: side3 ; background: seagreen;}
+#art5{        grid-area: art5  ; height: 100%}
+#art6{        grid-area: art6  ; height: 100%}
+#art7{        grid-area: art7  ; height: 100%}
+#art8{        grid-area: art8  ; height: 100%}
+#art9{        grid-area: art9  ; height: 100%}
+#art10{       grid-area: art10 ; height: 100%}
+  #pic5{      grid-area: pic5  ; height: 100% ; border: 1px solid purple}
+  #pic6{      grid-area: pic6  ; height: 100% ; border: 1px solid purple}
+  #pic7{      grid-area: pic7  ; height: 100% ; border: 1px solid purple}
+  #pic8{      grid-area: pic8  ; height: 100% ; border: 1px solid purple}
+  #pic9{      grid-area: pic9  ; height: 100% ; border: 1px solid purple}
+  #pic10{     grid-area: pic10 ; height: 100% ; border: 1px solid purple}

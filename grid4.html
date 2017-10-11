@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>News room</title>
+<link href='https://fonts.googleapis.com/css?family=Faster One' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+<link href='style_grid4.css' rel='stylesheet'>
+<link href='mobile_grid4.css' rel='stylesheet'>
+</head>
+
+
+
+<body>
+
+<div class= "titleBox">News room</div><div class = "menu"></div>
+  <div class= "cat1">Main</div>
+  <div class= "cat2">Top stories</div>
+  <div class= "cat3">International</div>
+  <div class= "cat4">Politics</div>
+  <div class= "cat5">Business</div>
+  <div class= "cat6">Tech</div>
+  <div class= "cat7">Digital</div>
+  <div class= "cat8">Jobs</div>
+  <div class= "cat9">Sport</div>
+
+<div class= "content"  id="art0">
+
+</div>
+<div class= "side0">
+  <div class="side_highL content" id="result">highlights</div>
+  <div class="side_cont content">
+    <button onclick= newXHR() >next source</button>
+  </div>
+  <div class="ad1 ad">ad</div>
+  <div class="ad2 ad">ad</div>
+</div>
+<div class="banner-ad1 ad">banner-ad1</div>
+
+<div class="content" id="art1">
+</div>
+
+<div class="content" id="art2">
+</div>
+
+<div class="content" id="art3">
+</div>
+
+<div class="content" id="art4">
+</div>
+
+<div class= "side2">
+<a class="twitter-timeline" data-width="300" data-height="600" href="https://twitter.com/CNN">Tweets by CNN
+  </a>
+
+
+
+</div>
+
+<div class="banner-ad2 ad">banner-ad2</div>
+<div id="pic5"></div>
+<div class="content" id="art5">art5</div>
+<div id="pic6"></div>
+<div class="content" id="art6">art6</div>
+<div id="pic7"></div>
+<div class="content" id="art7">art7</div>
+<div id="pic8"></div>
+<div class="content" id="art8">art8</div>
+<div id="pic9"></div>
+<div class="content" id="art9">art9</div>
+<div id="pic10">
+  <a href = "https://fr.wikipedia.org/wiki/Gare_internationale_de_Canfranc">
+  <img src ="LL.jpg" alt = "awesome girl"/></div></a>
+<div class="content" id="art10">
+  <a href = "https://fr.wikipedia.org/wiki/Gare_internationale_de_Canfranc">
+    <h3>Most beautiful girl visits derelict train station in Spain</h3></div>
+  </a>
+
+<div class= "side3"></div>
+
+
+</body>
+
+<script>
+
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://newsapi.org/v1/articles?source=cnn&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
+xhr.send();
+console.log(xhr.status);
+var Results = JSON.parse(xhr.responseText);
+
+var xhr2 = new XMLHttpRequest();
+xhr2.open("GET", "https://newsapi.org/v1/articles?source=bbc-news&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
+xhr2.send();
+console.log(xhr2.status);
+var Results2 = JSON.parse(xhr2.responseText);
+
+var xhr3 = new XMLHttpRequest();
+xhr3.open("GET", "https://newsapi.org/v1/articles?source=the-guardian-uk&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
+xhr3.send();
+console.log(xhr3.status);
+var Results3 = JSON.parse(xhr3.responseText);
+
+var resultsArray = [Results, Results2, Results3];
+var current = 0;
+var currentXHR = resultsArray[current];
+
+newsRoom(resultsArray[current]);
+
+
+
+function newXHR(){
+  if (current ===(resultsArray.length -1)){current = 0}
+  else {current++;}
+  newsRoom(resultsArray[current]);
+
+};
+
+
+
+
+function newsRoom(e){
+      document.getElementById('result').innerHTML =   "Source: " + (e.source).toUpperCase()+ " <br>(" + e.articles.length +" articles)<br>"+
+      current;
+
+      for(i = 0 ; i <= 0 ; i++){
+        let ii = "art";
+        let title = (JSON.stringify(e.articles[i].title)).replace(/\"/g, "");
+            if (title.length > 70){title = title.substring(0,67)+"..."}
+        let author = "by "+(JSON.stringify(e.articles[i].author)).replace(/\"/g, "");
+            if (author === "by null"){author = (e.source).toUpperCase() ; }
+        let description = (JSON.stringify(e.articles[i].description)).replace(/\"/g, "");
+
+            document.getElementById(ii+i).innerHTML = "<h1><a href="+ e.articles[i].url +">"+title+"</a></h1>"
+                                                      +"<h4>"+author+"</h4>"
+                                                      +"<a href=" + e.articles[i].url + "><img src=" + e.articles[i].urlToImage + "></a>"
+                                                      +"<p>" + description + "</p>";
+                                                    }
+
+
+      for(i = 1 ; i <= 4 ; i++){
+      let ii = "art";
+      let title = (JSON.stringify(e.articles[i].title)).replace(/\"/g, "");
+      if (title.length > 70){title = title.substring(0,67)+"..."}
+      let author = "by "+(JSON.stringify(e.articles[i].author)).replace(/\"/g, "");
+      if (author === "by null"){author = (e.source).toUpperCase() ; }
+      let description = (JSON.stringify(e.articles[i].description)).replace(/\"/g, "");
+
+      document.getElementById(ii+i).innerHTML = "<h1><a href="+ e.articles[i].url +">"+title+"</a></h1>"
+                                              +"<h4>"+author+"</h4>"
+                                              +"<a href="+ e.articles[i].url+"><img src="+ e.articles[i].urlToImage+ "></a>"
+                                              ;
+      }
+
+      for(i = 5 ; i <= 9 ; i++){
+      let ii = "art";
+      let iii = "pic";
+      let title = (JSON.stringify(e.articles[i].title)).replace(/\"/g, "");
+      if (title.length > 70){title = title.substring(0,67)+"..."}
+      let description = (JSON.stringify(e.articles[i].description)).replace(/\"/g, "");
+
+      document.getElementById(ii+i).innerHTML = "<h3><a href="+ e.articles[i].url +">"+title+"</a></h3>";
+      document.getElementById(iii+i).innerHTML = "<a href="+ e.articles[i].url+"><img src="+ e.articles[i].urlToImage + "></a>";}
+}
+
+
+
+
+
+
+
+</script>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</html>
