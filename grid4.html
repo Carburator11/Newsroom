@@ -89,21 +89,52 @@ var xhr = new XMLHttpRequest();
 xhr.open("GET", "https://newsapi.org/v1/articles?source=cnn&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
 xhr.send();
 console.log(xhr.status);
-var Results = JSON.parse(xhr.responseText);
+var CNN = JSON.parse(xhr.responseText);
 
 var xhr2 = new XMLHttpRequest();
 xhr2.open("GET", "https://newsapi.org/v1/articles?source=bbc-news&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
 xhr2.send();
 console.log(xhr2.status);
-var Results2 = JSON.parse(xhr2.responseText);
+var BBC = JSON.parse(xhr2.responseText);
 
 var xhr3 = new XMLHttpRequest();
 xhr3.open("GET", "https://newsapi.org/v1/articles?source=the-guardian-uk&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
 xhr3.send();
 console.log(xhr3.status);
-var Results3 = JSON.parse(xhr3.responseText);
+var GuardUK = JSON.parse(xhr3.responseText);
 
-var resultsArray = [Results, Results2, Results3];
+var xhr4 = new XMLHttpRequest();
+xhr4.open("GET", "https://newsapi.org/v1/articles?source=national-geographic&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
+xhr4.send();
+console.log(xhr4.status);
+var NatGeo = JSON.parse(xhr4.responseText);
+
+var xhr5 = new XMLHttpRequest();
+xhr5.open("GET", "https://newsapi.org/v1/articles?source=mashable&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
+xhr5.send();
+console.log(xhr5.status);
+var Mash = JSON.parse(xhr5.responseText);
+
+var xhr6 = new XMLHttpRequest();
+xhr6.open("GET", "https://newsapi.org/v1/articles?source=techcrunch&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
+xhr6.send();
+console.log(xhr6.status);
+var TechCrunch = JSON.parse(xhr6.responseText);
+
+var xhr7 = new XMLHttpRequest();
+xhr7.open("GET", "https://newsapi.org/v1/articles?source=financial-times&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
+xhr7.send();
+console.log(xhr7.status);
+var FT = JSON.parse(xhr7.responseText);
+
+var xhr8 = new XMLHttpRequest();
+xhr8.open("GET", "https://newsapi.org/v1/articles?source=bbc-sport&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
+xhr8.send();
+console.log(xhr8.status);
+var BBCsport = JSON.parse(xhr8.responseText);
+
+
+var resultsArray = [CNN, BBC, GuardUK, NatGeo, Mash, TechCrunch, FT, BBCsport];
 var current = 0;
 var currentXHR = resultsArray[current];
 
@@ -128,7 +159,7 @@ function newsRoom(e){
       for(i = 0 ; i <= 0 ; i++){
         let ii = "art";
         let title = (JSON.stringify(e.articles[i].title)).replace(/\"/g, "");
-            if (title.length > 70){title = title.substring(0,67)+"..."}
+            if (title.length > 75){title = title.substring(0,72)+"..."}
         let author = "by "+(JSON.stringify(e.articles[i].author)).replace(/\"/g, "");
             if (author === "by null"){author = (e.source).toUpperCase() ; }
         let description = (JSON.stringify(e.articles[i].description)).replace(/\"/g, "");
@@ -143,7 +174,7 @@ function newsRoom(e){
       for(i = 1 ; i <= 4 ; i++){
       let ii = "art";
       let title = (JSON.stringify(e.articles[i].title)).replace(/\"/g, "");
-      if (title.length > 70){title = title.substring(0,67)+"..."}
+      if (title.length > 80){title = title.substring(0,77)+"..."}
       let author = "by "+(JSON.stringify(e.articles[i].author)).replace(/\"/g, "");
       if (author === "by null"){author = (e.source).toUpperCase() ; }
       let description = (JSON.stringify(e.articles[i].description)).replace(/\"/g, "");
@@ -158,7 +189,7 @@ function newsRoom(e){
       let ii = "art";
       let iii = "pic";
       let title = (JSON.stringify(e.articles[i].title)).replace(/\"/g, "");
-      if (title.length > 70){title = title.substring(0,67)+"..."}
+      if (title.length > 59){title = title.substring(0,57)+"..."}
       let description = (JSON.stringify(e.articles[i].description)).replace(/\"/g, "");
 
       document.getElementById(ii+i).innerHTML = "<h3><a href="+ e.articles[i].url +">"+title+"</a></h3>";

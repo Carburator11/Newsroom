@@ -17,7 +17,7 @@ h4 {  margin: 2px 0px 5px 0px;
 .content{   background: white;
             text-align: center;}
 
-.ad{        background: palegreen;
+.ad{        background: #99b3ff;
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -66,9 +66,9 @@ div[class^="cat"]{
 
 div[class^="cat"]:hover{
             opacity: 0.6;
-          cursor: pointer;}       
+          cursor: pointer;}
 
-.cat1{      grid-area: cat1; background-color: #000d33; color: white;}
+.cat1{      grid-area: cat1; background-color: black; color: white;}
 .cat2{      grid-area: cat2; background-color: #001a66; color: white;}
 .cat3{      grid-area: cat3; background-color: #002699; color: white;}
 .cat4{      grid-area: cat4; background-color: #0033cc; color: white;}
@@ -80,7 +80,7 @@ div[class^="cat"]:hover{
 
 .side0{
   grid-area: side0;
-  background: lightgreen;
+  background: ;
   display: grid;
   grid-template-rows: 24% 24% 24% 24% ;
   grid-template-areas: "side_highlight"  "side_content"  "ad1"  "ad2";
