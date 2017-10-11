@@ -52,11 +52,16 @@ grid-template-areas:
 align-items: stretch;  justify-content: center; justify-items: stretch;
 }
 
-.titleBox{  grid-area: title;  background: cyan;
+.titleBox{  grid-area: title;
+            background: url(art/titlebg.jpg) right no-repeat;
+            background-color: black;
             font-family: 'Faster One';
             font-size: 64px;
             color: blue;
             padding: 10px 0px 0px 60px;}
+
+
+
 .menu{       display: none;}
 
 .cat1{      grid-area: cat1;
