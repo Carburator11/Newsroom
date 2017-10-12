@@ -14,7 +14,7 @@
 
 <body>
 
-<div class= "titleBox">News room</div><div class = "menu"></div>
+<div class= "titleBox" id="title-cat0">News room</div><div class = "menu"></div>
   <div class= "cat1" onclick= changeXHR(0)>Top stories</div>
   <div class= "cat2" onclick= changeXHR(1)>International</div>
   <div class= "cat3" onclick= changeXHR(2)>Politics</div>
@@ -80,6 +80,8 @@
 
 <script>
 var current = 0;
+var currentID = "title-cat" + current.toString() ;
+
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "https://newsapi.org/v1/articles?source=cnn&sortBy?&apiKey=c6b3fe2e86d54cae8dcb10dc77d5c5fc", false);
@@ -142,27 +144,27 @@ var twitterUrlArray = [ "<a class='twitter-timeline' data-width='300' data-heigh
 
 
 var currentXHR = resultsArray[current];
-
 newsRoom(resultsArray[current]);
 
 
 
 function newXHR(){
   if (current ===(resultsArray.length -1)){current = 0}
-  else {current++;}
+  else {current++; currentID = "title-cat" + current.toString();}
   newsRoom(resultsArray[current]);
-
+  document.getElementsByClassName('titleBox')[0].id = currentID;
 };
 
 function changeXHR(e){
-  current = e;
+  current = e; currentID = "title-cat" + current.toString();
   newsRoom(resultsArray[current]);
+  document.getElementsByClassName('titleBox')[0].id = currentID;
 }
 
 
 function newsRoom(e){
       document.getElementById('result').innerHTML =   "Source: " + (e.source).toUpperCase()+ " <br>(" + e.articles.length +" articles)<br>"+
-      current;
+      currentID;
       for(i = 0 ; i <= 0 ; i++){
         let ii = "art";
         let title = (JSON.stringify(e.articles[i].title)).replace(/\"/g, "");
@@ -208,7 +210,7 @@ function newsRoom(e){
 
 
 function credit(){
-  alert("Copyright \u00A9 P. Vautherin 2017.\nBuilt with HTML, CSS, plain Javascript, Twitter widget and NewsAPI.org.\nAll product names, logos, contents and brands are property of their respective owners. \n\n p.vautherin@hotmail.com \n github.com/Carburator11")
+  alert("**For testing purpose only**\n\nCopyright \u00A9 P. Vautherin 2017.\nBuilt with HTML, CSS, plain Javascript, Twitter widget and NewsAPI.org.\nAll product names, logos, contents and brands are property of their respective owners. \n\n p.vautherin@hotmail.com \n github.com/Carburator11")
 }
 
 

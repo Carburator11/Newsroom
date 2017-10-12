@@ -1,13 +1,13 @@
 
 
 @media (max-width: 900px) {
-.titleBox {background: yellow;}
 
-body{
+body {
+background: yellow;
 grid-template-columns: 3.2% 10.4% 10.4% 10.4% 10.4% 10.4% 10.4% 10.4% 10.4% 10.4% 3.2%;
 grid-template-rows: 90px auto 45px 300px 300px 45px 80px 80px 80px ;
 grid-template-areas:
-"title title title title title title title title title menu menu"
+"title title title title title title title title title title title"
 ". art0 art0 art0 art0 art0 art0 art0 art0 art0 ."
 ". banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 ."
 ". art1 art1 art1 art1 art2 art2 art2 art2 side2 ."
@@ -18,7 +18,7 @@ grid-template-areas:
 ". pic9 art9 art9 pic10 art10 art10 side3 side3 side3 ."
 }
 
-.side0{  display: none;
+.side0, .side2, .side3{  display: none;
 }
 .menu{  display: flex;
         background: white;
@@ -30,12 +30,15 @@ div[class^="cat"]{
   display: none;
 }
 
+
+}
 @media (max-width: 400px) {
-.titleBox {background: green;}
+
 
 body{
+  background: green;
   grid-template-columns: 2% 24% 24% 24% 24% 2%;
-grid-template-areas:
+  grid-template-areas:
 ". title title title title ."
 ". art0 art0 art0 art0 ."
 ". banner-ad1 banner-ad1 banner-ad1 banner-ad1 ."
@@ -46,3 +49,11 @@ grid-template-areas:
 ". art7 art7 art8 art8 ."
 ". art9 art9 art10 art10 ."
 ;}
+
+.side0, .side2, .side3{
+  display: hidden;
+}
+
+
+
+}

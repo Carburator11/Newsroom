@@ -25,10 +25,10 @@ h4 {  margin: 2px 0px 5px 0px;
 
 body{
 
-background: #f7f7f7;
+background: #e6e6e6;
 display: grid;
 grid-template-columns: 13.1% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 13.1%;
-grid-template-rows: 90px 30px auto 45px 300px 300px 45px 80px 80px 80px ;
+grid-template-rows: 120px 30px auto 45px 300px 300px 45px 80px 80px 80px ;
 grid-gap: 5px;
 grid-template-areas:
 ". title title title title title title title title title."
@@ -46,7 +46,7 @@ align-items: stretch;  justify-content: center; justify-items: stretch;
 }
 
 .titleBox{  grid-area: title;
-            background: url(art/titlebg.jpg) right no-repeat;
+
             background-color: black;
             font-family: 'Faster One';
             letter-spacing: 1px;
@@ -54,7 +54,33 @@ align-items: stretch;  justify-content: center; justify-items: stretch;
             color: blue;
             padding: 10px 0px 0px 60px;}
 
+#title-cat0 {background: url(art/main.jpg) right no-repeat;
+            background-color: black;}
+#title-cat1{background: url(art/international.jpg) right no-repeat;
+            background-color: black;}
+#title-cat2{background: url(art/politics.jpg) no-repeat top right;
+            background-color: #afdefa;}
+#title-cat3{background: url(art/environment.jpg) right no-repeat;
+            color: #1f8f16;}
+#title-cat4 {background: url(art/tech.jpg) left center no-repeat;
+            background-color: blue;
+            color: #fff1a9; }
+#title-cat5 {background: url(art/digital.jpg) left;
+            color: #525d6c;}
+#title-cat6 {background: url(art/finance.jpg) right ;
+            color: #cccccc;}
+#title-cat7 {background: url(art/sport.jpg) right ;
+            color: white;}
 
+.cat1{      grid-area: cat1; background-color: black  ; color: white;} /* Top stories -CNN */
+.cat2{      grid-area: cat2; background-color: #001a66; color: white;} /* International - BBC */
+.cat3{      grid-area: cat3; background-color: #ff3333; color: white;} /* Politics - Guardian uk */
+.cat4{      grid-area: cat4; background-color: #33ff33; color: white;} /* Environment - Nat Geographic */
+.cat5{      grid-area: cat5; background-color: #99b3ff; color: white;} /* Tech */
+.cat6{      grid-area: cat6; background-color: #3366ff; color: white;} /* Digital */
+.cat7{      grid-area: cat7; background-color: #00b300; color: white;} /* Finance - FT */
+.cat8{      grid-area: cat8; background-color: orange ; color: white;} /* Sport - BBC sport */
+.cat9{      grid-area: cat9; background-color: #cccccc; color: black;} /* About */
 
 .menu{       display: none;}
 
@@ -67,16 +93,6 @@ div[class^="cat"]{
 div[class^="cat"]:hover{
             opacity: 0.6;
           cursor: pointer;}
-
-.cat1{      grid-area: cat1; background-color: black; color: white;}
-.cat2{      grid-area: cat2; background-color: #001a66; color: white;}
-.cat3{      grid-area: cat3; background-color: #002699; color: white;}
-.cat4{      grid-area: cat4; background-color: #0033cc; color: white;}
-.cat5{      grid-area: cat5; background-color: #0040ff; color: white;}
-.cat6{      grid-area: cat6; background-color: #3366ff; color: white;}
-.cat7{      grid-area: cat7; background-color: #668cff; color: white;}
-.cat8{      grid-area: cat8; background-color: #99b3ff; color: white;}
-.cat9{      grid-area: cat9; background-color: orange; color: black;}
 
 .side0{
   grid-area: side0;
