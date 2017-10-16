@@ -35,13 +35,27 @@ h2{ font-size: 18px;}
 h3{ font-size: ; }
 h4{ font-size: ; }
 
-#art1 img, #art2 img, #art3 img, #art4  img{
-  width: 90%;
-  
-  left: 5%;
+#art0 img {
+  min-height: 300px;
+  height: auto;
+  width: 80vw;
+  padding-left: 2.5vw;
+  }
 
+
+#art1, #art2, #art3, #art4{
+    height: 32vw;
+    min-height: 220px;
+    text-align: center;}
+
+#art1 img, #art2 img, #art3 img, #art4  img{
+  height: auto;
+  width: 35vw;
+  left: 6.5vw;
 
 }
+
+
 
 @media (max-width: 400px) {
 
