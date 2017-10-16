@@ -3,41 +3,52 @@
 @media (max-width: 900px) {
 
 body {
+text-align: center;
 background: yellow;
-grid-template-columns: 3.2% 10.4% 10.4% 10.4% 10.4% 10.4% 10.4% 10.4% 10.4% 10.4% 3.2%;
-grid-template-rows: 90px auto 45px 300px 300px 45px 80px 80px 80px ;
+grid-template-columns: 6% 11% 11% 11% 11% 11% 11% 11% 11% 6%;
 grid-template-areas:
-"title title title title title title title title title title title"
-". art0 art0 art0 art0 art0 art0 art0 art0 art0 ."
-". banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 ."
-". art1 art1 art1 art1 art2 art2 art2 art2 side2 ."
-". art3 art3 art3 art3 art4 art4 art4 art4 side2 ."
-". banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 ."
-". pic5 art5 art5 pic6 art6 art6 side3 side3 side3 ."
-". pic7 art7 art7 pic8 art8 art8 side3 side3 side3 ."
-". pic9 art9 art9 pic10 art10 art10 side3 side3 side3 ."
+". title title title title title title title title ."
+". cat1 cat2 cat3 cat4 cat5 cat6 cat7 cat8 ."
+". art0 art0 art0 art0 art0 art0 art0 art0 ."
+". banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 ."
+". art1 art1 art1 art1 art2 art2 art2 art2 ."
+". art3 art3 art3 art3 art4 art4 art4 art4 ."
+". banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2 banner-ad2  ."
+". pic5 art5 art5 art5 pic6 art6 art6 art6  ."
+". pic7 art7 art7 art7 pic8 art8 art8 art8  ."
+". pic9 art9 art9 art9 pic10 art10 art10 art10  ."
+;
 }
 
-.side0, .side2, .side3{  display: none;
-}
+.side0, .side2, .side3, #about {  display: none; }
+
 .menu{  display: flex;
         background: white;
         height: 100%;
         width: 100%;
         grid-area: menu}
 
-div[class^="cat"]{
-  display: none;
-}
+div[class^="cat"]{ font-size: 1.8vw; }
+
+h1{ font-size: ; }
+h2{ font-size: 18px;}
+h3{ font-size: ; }
+h4{ font-size: ; }
+
+#art1 img, #art2 img, #art3 img, #art4  img{
+  width: 90%;
+  
+  left: 5%;
 
 
 }
+
 @media (max-width: 400px) {
 
 
 body{
   background: green;
-  grid-template-columns: 2% 24% 24% 24% 24% 2%;
+  grid-template-columns: 3% 24% 24% 24% 24% 3%;
   grid-template-areas:
 ". title title title title ."
 ". art0 art0 art0 art0 ."
@@ -49,6 +60,10 @@ body{
 ". art7 art7 art8 art8 ."
 ". art9 art9 art10 art10 ."
 ;}
+
+div[class^="cat"]{
+  display: none;
+}
 
 .side0, .side2, .side3{
   display: hidden;

@@ -8,6 +8,9 @@
 <link href='style_grid4.css' rel='stylesheet'>
 <link href='mobile_grid4.css' rel='stylesheet'>
 <link rel="icon" href="favicon.ico">
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </head>
 
 
@@ -23,7 +26,7 @@
   <div class= "cat6" onclick= changeXHR(5)>Digital</div>
   <div class= "cat7" onclick= changeXHR(6)>Finance</div>
   <div class= "cat8" onclick= changeXHR(7)>Sport</div>
-  <div class= "cat9" onclick= credit()    >About</div>
+  <div class= "cat9" onclick= credit()  id="about"  >About</div>
 
 <div class= "content"  id="art0">
 
@@ -77,7 +80,7 @@
 
 
 </body>
-
+</html>
 <script>
 var current = 0;
 var currentID = "title-cat" + current.toString() ;
@@ -188,7 +191,7 @@ function newsRoom(e){
       if (author === "by null"){author = (e.source).toUpperCase() ; }
       let description = (JSON.stringify(e.articles[i].description)).replace(/\"/g, "");
 
-      document.getElementById(ii+i).innerHTML = "<h1><a target= '_blank' href="+ e.articles[i].url +">"+title+"</a></h1>"
+      document.getElementById(ii+i).innerHTML = "<h2><a target= '_blank' href="+ e.articles[i].url +">"+title+"</a></h2>"
                                               +"<h4>"+author+"</h4>"
                                               +"<a target= '_blank' href="+ e.articles[i].url+"><img src="+ e.articles[i].urlToImage+ "></a>"
                                               ;
@@ -216,7 +219,3 @@ function credit(){
 
 
 </script>
-
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-</html>
