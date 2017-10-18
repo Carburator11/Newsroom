@@ -29,14 +29,15 @@ align-items: stretch;  justify-content: center; justify-items: stretch;
 
 
 h1{ font-size: 32px; }
-h2{ font-size: 20px;}
-h3{ font-size: 18px; }
+h2{ font-size: 18px;}
+h3{ font-size: 15px; }
 h4{ margin: 2px 0px 5px 0px;
     font-size: 14px;
     font-weight: normal;}
 
 .content{   background: white;
-            text-align: center;}
+            text-align: center;
+            padding: 5px;}
 
 .ad{        background: #99b3ff;
             display: flex;
@@ -50,13 +51,15 @@ a:hover {color: #1955a5;}
 img:hover{opacity: 0.7;}
 
 .titleBox{  grid-area: title;
-
+            text-align: left;
             background-color: black;
             font-family: 'Faster One';
             letter-spacing: 1px;
             font-size: 68px;
             color: blue;
-            padding: 10px 0px 0px 60px;}
+            padding: 10px 0px 0px 60px;
+            text-overflow: clip;
+            white-space: nowrap;}
 
 #title-cat0 {background: url(art/main.jpg) right no-repeat;
             background-color: black;}
@@ -120,7 +123,7 @@ div[class^="cat"]:hover{
 }
 
 #art0 img {
-  min-height: 300px;
+
   height: auto;
   width: 80%;
   padding-left: 5%;
@@ -151,7 +154,10 @@ div[class^="cat"]:hover{
 
 
   #art5, #art6, #art7, #art8, #art9, #art10{
-    border-top : 3px solid #1955a5
+    border-top : 3px solid #1955a5;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    text-align: left;
   }
 
 
@@ -160,7 +166,7 @@ height: 100%;
 width: 100%;
 object-fit: contain;}
 
-.content{padding: 5px;}
+
 
 
   .side_highL{  grid-area: side_highlight;}

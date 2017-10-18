@@ -7,7 +7,7 @@ text-align: center;
 background: yellow;
 grid-template-columns: 6% 11% 11% 11% 11% 11% 11% 11% 11% 6%;
 grid-template-areas:
-". title title title title title title title title ."
+"title title title title title title title title title title"
 ". cat1 cat2 cat3 cat4 cat5 cat6 cat7 cat8 ."
 ". art0 art0 art0 art0 art0 art0 art0 art0 ."
 ". banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 banner-ad1 ."
@@ -22,31 +22,35 @@ grid-template-areas:
 
 .side0, .side2, .side3, #about {  display: none; }
 
+.titleBox{
+        padding: 5px 5px 5px 70px;}
+
 .menu{  display: flex;
         background: white;
         height: 100%;
         width: 100%;
         grid-area: menu}
 
-div[class^="cat"]{ font-size: 1.8vw; }
+div[class^="cat"]{
+        font-size: 1.8vw; }
 
-h1{ font-size: ; }
-h2{ font-size: 18px;}
-h3{ font-size: ; }
-h4{ font-size: ; }
+h1{     font-size: ; }
+h2{     font-size: 18px;}
+h3{     font-size: ; }
+h4{     font-size: ; }
 
 #art0 img {
-  min-height: 300px;
-  height: auto;
-  width: 80vw;
-  padding-left: 2.5vw;
+
+        height: auto;
+        width: 80vw;
+        padding-left: 2.5vw;
   }
 
 
 #art1, #art2, #art3, #art4{
-    height: 32vw;
-    min-height: 220px;
-    text-align: center;}
+        height: 32vw;
+        min-height: 220px;
+        text-align: center;}
 
 #art1 img, #art2 img, #art3 img, #art4  img{
   height: auto;
@@ -83,6 +87,13 @@ div[class^="cat"]{
   display: hidden;
 }
 
+.titleBox{
+  font-size: 50px;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  white-space: normal;
+  height: 30vw;
+}
 
 
 }

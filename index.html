@@ -17,7 +17,7 @@
 
 <body>
 
-<div class= "titleBox" id="title-cat0">News room</div><div class = "menu"></div>
+<div class= "titleBox" id="title-cat0" onclick= newXHR()>News room</div><div class = "menu"></div>
   <div class= "cat1" onclick= changeXHR(0)>Top stories</div>
   <div class= "cat2" onclick= changeXHR(1)>International</div>
   <div class= "cat3" onclick= changeXHR(2)>Politics</div>
@@ -70,7 +70,7 @@
 <div class="content" id="art9">art9</div>
 <div id="pic10">
   <a href = "https://fr.wikipedia.org/wiki/Gare_internationale_de_Canfranc">
-  <img src ="LL.jpg" alt = "awesome girl"/></div></a>
+  <img src ="art/LL.jpg" alt = "awesome girl"/></div></a>
 <div class="content" id="art10">
   <a href = "https://fr.wikipedia.org/wiki/Gare_internationale_de_Canfranc">
     <h3>Most beautiful girl visits derelict train station in Spain</h3></div>
@@ -152,7 +152,7 @@ newsRoom(resultsArray[current]);
 
 
 function newXHR(){
-  if (current ===(resultsArray.length -1)){current = 0}
+  if (current === (resultsArray.length - 1)){current = 0; currentID = "title-cat" + current.toString();}
   else {current++; currentID = "title-cat" + current.toString();}
   newsRoom(resultsArray[current]);
   document.getElementsByClassName('titleBox')[0].id = currentID;
@@ -167,7 +167,7 @@ function changeXHR(e){
 
 function newsRoom(e){
       document.getElementById('result').innerHTML =   "Source: " + (e.source).toUpperCase()+ " <br>(" + e.articles.length +" articles)<br>"+
-      currentID;
+      currentID +"<br>"+current;
       for(i = 0 ; i <= 0 ; i++){
         let ii = "art";
         let title = (JSON.stringify(e.articles[i].title)).replace(/\"/g, "");
