@@ -3,6 +3,10 @@
   margin: 0; padding:0;
   font-family:  'Droid Serif', georgia, serif;}
 
+:root{
+  --main-bg-color : #1955a5;
+}
+
 html{width: 100%;text-align: center;background: blue;}
 
 body{
@@ -136,7 +140,7 @@ div[class^="cat"]:hover{
 
 
 #art1, #art2, #art3, #art4{
-  border-top : 7px solid #1955a5 ;
+  border-top : 7px solid var(--main-bg-color) ;
   position: relative;
   padding: 10px;
 
@@ -154,7 +158,7 @@ div[class^="cat"]:hover{
 
 
   #art5, #art6, #art7, #art8, #art9, #art10{
-    border-top : 3px solid #1955a5;
+    border-top : 3px solid var(--main-bg-color);
     text-overflow: ellipsis;
     max-width: 100%;
     text-align: left;
