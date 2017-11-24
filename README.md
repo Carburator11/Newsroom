@@ -7,3 +7,6 @@ Legal :  all product names, logos, contents and brands are property of their res
 URL :  <a href="http://www.carb11.eu/newsroom">http://www.carb11.eu/newsroom</a><br>
 
 <img src="http://www.carb11.eu/static/nrv1_preview.jpg" />
+
+
+Note : AdBlock bloque parfois le widget Twitter. Ajoutez Twitter à la Safe List ou désactivez AdBlock pour cette page.
