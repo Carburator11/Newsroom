@@ -1,8 +1,9 @@
-<h3>v1. Newsroom (oct. 2017)</h3>
+<h3>Newsroom (oct. 2017)</h3>
 
-Built with HTML, CSS, plain Javascript, Twitter widget and NewsAPI.org.
-All product names, logos, contents and brands are property of their respective owners. 
+Techs : built with HTML, CSS, plain Javascript, Twitter widget and NewsAPI.org.<br><br>
 
-<a href="http://www.carb11.eu/newsroom">http://www.carb11.eu/newsroom</a>
+Legal: All product names, logos, contents and brands are property of their respective owners.<br><br>
 
-<br><img src="http://www.carb11.eu/static/nrv1_preview.jpg" />
+URL : <a href="http://www.carb11.eu/newsroom">http://www.carb11.eu/newsroom</a><br><br>
+
+<img src="http://www.carb11.eu/static/nrv1_preview.jpg" />
